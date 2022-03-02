@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,9 @@
     <title>04_data与el的两种写法</title>
     <script src="../js/vue.js"></script>
 </head>
+
 <body>
-<!--
+    <!--
     data与el的2种写法
         1.el有2种写法
             (1).new Vue时候配置el属性。
@@ -20,40 +22,41 @@
         3.一个重要的原则：
             由Vue管理的函数，一定不要写箭头函数，一旦写了箭头函数，this就不再是Vue实例了。
 -->
-<!-- 创建一个容器 -->
-<div id="root">
+    <!-- 创建一个容器 -->
+    <div id="root">
         <h1>Hello {{name}}</h1>
-</div>
-<script>
-    Vue.config.productionTip = false;//阻止 vue 在启动时生成生产提示
+    </div>
+    <script>
+        Vue.config.productionTip = false;//阻止 vue 在启动时生成生产提示
 
-    /*//el的两种写法
-    const vm = new Vue({
-        // el: '#root',//第一种写法
-        data: {
-            name: 'Vue'
-        }
-    })
-    console.log(vm)
-    vm.$mount('#root')//第二种写法*/
-
-    //data的两种写法
-    new Vue({
-        el:'#root',
-        //data的第一种写法：对象式
-        /*data:{
-            name:'Vue'
-        }*/
-
-        //data的第二种写法：函数式
-        data(){
-            console.log(this)//此处的this是Vue的实例对象
-            return{
-                name:'Vue'
+        /*//el的两种写法
+        const vm = new Vue({
+            // el: '#root',//第一种写法
+            data: {
+                name: 'Vue'
             }
-        }
-    })
+        })
+        console.log(vm)
+        vm.$mount('#root')//第二种写法*/
 
-</script>
+        //data的两种写法
+        new Vue({
+            el: '#root',
+            //data的第一种写法：对象式
+            /*data:{
+                name:'Vue'
+            }*/
+
+            //data的第二种写法：函数式
+            data() {
+                console.log(this)//此处的this是Vue的实例对象
+                return {
+                    name: 'Vue'
+                }
+            }
+        })
+
+    </script>
 </body>
+
 </html>
