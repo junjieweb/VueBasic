@@ -23,6 +23,7 @@
     </div>
     <script src="../js/vue.js"></script>
     <script>
+        Vue.config.productionTip = false;
         const vm = new Vue({
             el: '#root',
             data: {
@@ -38,24 +39,31 @@
                     this.isHot = !this.isHot
                 }
             },
-            /* watch: {
+            watch: {
                 isHot: {
                     immediate: true, //初始化时让handler调用一下
                     //handler什么时候调用？当isHot发生改变时。
                     handler(newValue, oldValue) {
                         console.log('isHot被修改了', newValue, oldValue)
                     }
+                },
+                info: {
+                    immediate: true, //初始化时让handler调用一下
+                    //handler什么时候调用？当isHot发生改变时。
+                    handler(newValue, oldValue) {
+                        console.log('info被修改了', newValue, oldValue)
+                    }
                 }
-            } */
+            }
         })
 
-        vm.$watch('isHot', {
+        /* vm.$watch('isHot', {
             immediate: true, //初始化时让handler调用一下
             //handler什么时候调用？当isHot发生改变时。
             handler(newValue, oldValue) {
                 console.log('isHot被修改了', newValue, oldValue)
             }
-        })
+        }) */
     </script>
 </body>
 
