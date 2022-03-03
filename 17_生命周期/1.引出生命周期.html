@@ -32,9 +32,6 @@
 			a: false,
 			opacity: 1
 		},
-		methods: {
-
-		},
 		//Vue完成模板的解析并把初始的真实DOM元素放入页面后（挂载完毕）调用mounted
 		mounted() {
 			console.log('mounted', this)
@@ -45,11 +42,11 @@
 		},
 	})
 
-		//通过外部的定时器实现（不推荐）
+	//通过外部的定时器实现（不推荐）
 	/* setInterval(() => {
 		vm.opacity -= 0.01
-		if(vm.opacity <= 0) vm.opacity = 1
-	},16) */
+		if (vm.opacity <= 0) vm.opacity = 1
+	}, 16) */
 </script>
 
 </html>
